@@ -1,0 +1,681 @@
+ @font-face {
+font-family: "Century Gothic";
+src:url("11528.ttf");
+}
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background:
+	linear-gradient(#56B1CD 30%,#1E1D25 30%);
+	font-family: "Century Gothic";
+	overflow-x: hidden;
+}
+.checkboxes::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.checkboxes::-webkit-scrollbar-track {
+    background:#306F9A;
+}
+ 
+.checkboxes::-webkit-scrollbar-thumb {
+  background-color: #56B1CD;
+  box-shadow: inset 0 0 3px #000
+ }
+ .over{
+	overflow: hidden;
+ }
+header{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background: #56B1CD;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.5s ease-in-out;
+	transform: translateY(-100%);
+	opacity: 0;
+	z-index: 10
+}
+header .navButton,
+ .mobaNav{
+	display: none;
+}
+header[data-scroll="in"]{
+	transform: translateY(0);
+	opacity: 1
+}
+.flex_center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2
+}
+header .flex_center img{
+	width: 34px;
+	margin: 15px;
+}
+header .flex_center .logo{
+	padding-bottom: 10px;
+	width: 170px
+}
+header nav{
+	margin-left: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header nav a{
+	padding: 20px 40px;
+	text-align: center;
+	color:#fff;
+	border-left:solid #306F9A 2px;
+	transition: 0.3s ease-in-out
+}
+header nav a:hover{
+	background:#efefef;
+	color:#306F9A ;
+	box-shadow: 0 0 10px #efefef
+}
+ a{
+	color:black;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	transition: 0.3s ease-in-out
+}
+header .flex_center > a:hover{
+	transform: translateX(5px);
+}
+
+.firstsection{
+	position: relative;
+	width: 100%;
+	min-height:100vh;
+	background:url(gory.png);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.firstsection .firstText{
+	width: 80%;
+	margin: 0 auto;
+}
+.firstsection .firstText h1{
+	margin-top:100px;
+	text-shadow: 1px 1px 3px black;
+	font-weight: bold;
+	font-size: 38px;
+	text-align: center;
+	color:#fff;
+}
+.firstsection .firstText hr{
+	width: 90px;
+	height: 1.5px;
+	background: #fff;
+}
+.firstsection .firstText h2{
+	font-size: 28px;
+	text-align: center;
+	color: #fff
+}
+
+main{
+	width: 100%;
+	padding:100px 0;
+	min-height: calc(100vh - 100px);
+	background: #1E1D25;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+	overflow: hidden;
+}
+main .aboutPlace{
+	margin:30px 0;
+	position: relative;
+	background:white;
+	width: 70%;
+	box-shadow: 0px 4px 50px #000000;
+	border-radius: 40px;
+	transition: 0.7s ease-in-out;
+	opacity:0;
+	transform:translateY(50px);
+}
+main .aboutPlace[data-scroll="in"]{
+	opacity:0.97;
+	transform:translateY(0);
+}
+main .aboutPlace .content{
+	margin: 20px 30px 20px 50px
+}
+main .aboutPlace .content h3{
+	font-weight: bold;
+	font-size: 28px;
+}
+main .aboutPlace .content p{
+	font-size: 20px;
+	text-indent:15px;
+	line-height: 25px;
+}
+main .aboutPlace .content .link{
+	display: inline-block;
+	transform:translateX(-190px);
+	opacity: 0;
+	transition: 0.7s ease-in-out;
+	transition-delay: 0.5s
+}
+main .aboutPlace .content .link[data-scroll="in"]{
+	transform:translateX(-90px);
+	opacity:1;
+}
+main .aboutPlace .content .link a{
+	background: #fff;
+	padding: 10px 25px;
+	border-radius: 25px;
+	font-size: 24px;
+	box-shadow:  0 0 15px  #aaa;
+}
+main .aboutPlace .content .link:hover{
+	transform:translateX(-80px);
+}
+main .aboutPlace .ghost{
+	position: absolute;
+	bottom:-120px;
+	right:-250px;
+	width: 500px;
+	z-index: -1;
+	transition: 0.3S ease-in-out;
+	transform: translateX(100px) translateY(100px);
+	opacity: 0;
+}
+main .aboutPlace .ghost[data-scroll="in"]{
+	transition-delay: 0.8s;
+	transform: translateX(0) translateY(0);
+	opacity: 1
+}
+main > img{
+	margin: 0 30px;
+	width: 50%;
+	border:outset 3px #306F9A ;
+	border-radius: 20px;
+}
+section{
+	width: 100%;
+	background: #1E1D25
+}
+section .places{
+	margin: 0 auto;
+	padding:70px 0;
+	background: #56B1CD;
+	color:#fff;
+	width: 100%;
+}
+section .places h3{
+	padding-left: 50px;
+	text-shadow: 1px 1px 3px black;
+	font-weight: bold;
+	font-size:40px;
+}
+section .places .flex_center{
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+section .placeCard{
+	margin: 20px;
+	text-decoration: none;
+	color:#fff
+}
+section .placeCard img{
+	width: 160px;
+	transition: 0.3s ease-in-out
+}
+section .placeCard img:hover{
+	transform: scale(1.1);
+}
+section .placeCard p{
+	width: 100%;
+	text-align: center;
+	font-weight: 900;
+	font-size: 20px;
+}
+#map{
+	margin-top:100px;
+	height: calc(var(--vh, 1vh) * 100 - 100px)
+}
+
+.objectCard{
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-decoration: none;
+    max-width: 330px;
+    color: #e0e0e0;
+    text-shadow: 1.8px 1.8px 2px black;
+    box-shadow: 2px 2px 10px black
+}
+.objectCard hr{
+	margin: 15px 0;
+    width: 160px;
+    height: 2px;
+    background: #e0e0e0;
+    border:none;
+}
+.youtube{
+	margin:20px 0;
+	width: 70%;
+	height: 35vw
+}
+.flex_center.youtube{
+	position: relative;
+	margin: 0 auto;
+	margin-bottom:50px;
+	width: 90%;
+}
+.youtube:before{
+	content: '';
+	position: absolute;
+	top:30%;
+	left: 0;
+	width:3px;
+	height:50%;
+	background: #C4C4C4
+}
+.youtube:after{
+	content: '';
+	position: absolute;
+	bottom:0;
+	right: 0;
+	width:3px;
+	height: 20%;
+	background: #C4C4C4
+}
+.formButton{
+	position: absolute;
+	top:195px;
+	left:0;
+	width:100px;
+	height: 50px;
+	background: #306F9A;
+	box-shadow: 0 0 4px #999;
+	cursor: pointer;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 17px;
+	color:#fff;
+	transition: 0.1s ease-in-out;
+	z-index: 10
+}
+.formButton:active{
+	background: #56B1CD
+}
+.checkboxes{
+	position: absolute;
+	top:245px;
+	left: 0;
+	z-index: 10;
+	width: 175px;
+	height: 200px;
+	box-shadow: 0 3px 2px #999;
+	overflow: auto;
+	transition: 0.3s ease-in-out
+}
+.goleft{
+	opacity: 0;
+	transform: translateX(-50px);
+}
+.checkboxes label{
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	height: 30px;
+	border-bottom: 1px solid #306F9A;
+	cursor: pointer;
+	background: #56B1CD
+}
+.checkboxes label input{
+	position: absolute;
+	opacity: 0;
+	z-index: -10
+}
+.checkboxes label .formtext{
+	padding-left: 5px;
+	color:#fff;
+	font-size: 20px;
+}
+.checkboxes label .switcher{
+	width: 30px;
+	height: 15px;
+	background: #306F9A;
+	border-radius: 15px
+}
+.checkboxes label .switcher div{
+	width:50%;
+	height: 100%;
+	background:#fff;
+	border-radius: 50%;
+	transition: 0.3s ease-in-out
+}
+.checkboxes label input:checked ~ .switcher div{
+	transform: translateX(100%);
+}
+.firstText.inst{
+	width: 100%;
+	max-width: 1000px
+}
+.firstText.inst h1{
+	text-align: center;
+}
+.flex_center_inst{
+	margin:0 auto;
+	width: 100%;
+	max-width:900px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	background: #fff;
+}
+.flex_center_inst .instarticle{
+	max-width: 293px;
+	width: calc(100% / 3 - 3px);
+	box-sizing: border-box;
+}
+.flex_center_inst .instarticle:nth-child(1n){
+	margin-right: 3px
+},
+.flex_center_inst .instarticle:nth-child(n + 3){
+	margin-right: 3px
+}
+.flex_center_inst .instarticle img{
+	width: 100%;
+	object-fit: cover;
+}
+.appsection{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #56B1CD;
+	padding: 20px 0
+}
+.appsection p{
+	color:#fff;
+	font-weight: bold;
+	text-shadow: 1px 1px 3px black;
+	font-size: 20px
+}
+.appsection img{
+	width: 200px
+}
+footer{
+	background: #56B1CD;
+	padding: 40px 0;
+	border-top:solid 1px #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+footer >a  .logo{
+	width: 150px
+}
+footer nav{
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
+footer nav a{
+	font-size: 16px;
+	margin: 5px;
+	color:#fff;
+}
+.firstsection .black{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6)
+}
+.dispNon{
+	display: none!important;
+}
+.cross{
+	position: fixed;
+	top:120px;
+	right: 15px;
+	cursor: pointer;
+	opacity:1;
+	filter: drop-shadow(0 0 5px #fff);
+	transition: 0.4s;
+	z-index: 10
+}
+ .cross img{
+	width: 46px
+}
+.firstsection .opendNew{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.firstsection .opendNew .content{
+	display: flex;
+	justify-content: center;
+	align-items: normal;	
+	width: 100%;
+	max-width: 820px;
+	background: #fff
+}
+.firstsection .opendNew .content .instaimg{
+	width: 100%;
+	height: 100%;
+	max-width: 490px;
+	max-height: 490px;
+	padding: 0;
+}
+.firstsection .opendNew .content .instaimg img{
+	max-height: 490px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.firstsection .opendNew .content .instapost{
+	background: #fff;
+	max-width: 330px;
+	width: 100%;
+	min-height: 100%;
+	max-height: 490px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.opendNew .content .instapost h3{
+	margin: 20px 0;
+	padding:5px 20px;
+	border-bottom: solid 1px black
+ }
+.opendNew .content .instapost p{
+	margin:20px
+}
+@media screen  and (max-width:1000px){
+	header .flex_center nav,
+	header .flex_center:nth-child(2){
+		display: none
+	}
+	header{
+		z-index: 100;
+	}
+	header .navButton{
+		display: block;
+		margin: 20px 20px 20px 0;
+		width: 60px;
+		height: 40px;
+		border-radius: 10px;
+		padding: 10px 0;
+		cursor: pointer;
+		background:  #306F9A;
+		transition: 0.2s ease-in-out
+	}
+	header .navButton:active{
+		opacity: 0.7
+	}
+	header .navButton .stick{
+		width: 40px;
+		height: 6px;
+		background: #fff;
+		margin: 5px auto
+	}
+	.firstsection .firstText{
+		width: 100%;
+	}
+	.firstsection .firstText h1{
+		font-size: 26px;
+		text-align: left;
+		text-shadow: 1px 1px 3px black;
+		margin:100px 20px 0 20px
+	}
+	.firstsection .firstText h2{
+		font-size: 20px;
+		text-align: left;
+		margin:20px 10px
+	}
+	.mobaNav{
+	position: absolute;
+	top:100px;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background: #fff;
+	transition: 0.5s ease-in-out;
+	opacity: 1;
+	z-index: 99
+	}
+	.goup{
+		transform:translateY(-150%);
+		opacity: 0
+	}
+	.mobaNav a{
+	padding: 20px 40px;
+	text-align: center;
+	border-bottom:solid #306F9A 2px;
+	transition: 0.3s ease-in-out
+	}
+	 .mobaNav a:hover{
+	background:#efefef;
+	color:#306F9A ;
+	box-shadow: 0 0 10px #efefef
+	}
+	main{
+		min-height: 100vh
+	}
+	main .aboutPlace{
+		margin: 0;
+		width:100%;
+		border-radius: 0;
+		transform:translateY(0);
+	}
+	main .aboutPlace .content{
+		margin-top:40px;
+	}
+	main .aboutPlace[style="width:40%"]{
+		width: 100%!important
+	}
+	main > img{
+		width: 100%;
+		border:0;
+		border-radius: 0;
+	}
+	main .aboutPlace[data-scroll="in"]{
+		opacity:0.9;
+		transform:translateY(0);
+	}
+	main .aboutPlace .content{
+		margin: 100px 20px 30px 20px
+	}
+	main .aboutPlace .content .link{
+		transition-delay: 0.2s;
+		transform: translateX(-20px);
+		margin: 20px 0
+	}
+	main .aboutPlace .content .link[data-scroll="in"]{
+		transform:translateX(0);
+		opacity:1;
+	}
+	main .aboutPlace .ghost{
+		bottom:-100px;
+		right: -100px;
+		opacity: 1;
+		transform:translateX(0);
+	}
+	section .places{
+		margin:40px 0 0 0;
+		padding:5px 0;
+		width: 100%;
+	}
+	section .places h3{
+		padding-left: 40px;
+	}
+	section .places .flex_center{
+		justify-content: center;
+	}
+	section .places .flex_center .placeCard img{
+		width: 118px
+	}
+	.formButton{
+		width: 70px
+	}
+	.checkboxes{
+		width: 150px
+	}
+	.firstText.inst h1{
+		text-align: center;
+	}
+}
+
+@media screen  and (max-width:800px){
+	.firstsection .opendNew .content{
+		flex-direction: column;
+	}
+	.firstsection .opendNew .content .instaimg,
+	.firstsection .opendNew .content .instapost,
+	.firstsection .opendNew .content .instaimg img{
+		max-width: 100%;
+		max-height: 100%
+	}
+	.firstsection .opendNew .content .instapost{
+		box-sizing: border-box;
+		overflow: visible;
+	}
+	.firstsection .opendNew{
+		overflow:auto;
+		height: calc(100vh - 100px);
+		padding-top:100px;
+		width:100%;
+		display: block
+	}
+}
+@media screen  and (max-width:600px){
+	header .flex_center h1 p{
+		display: none
+	}
+	footer nav{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+}
